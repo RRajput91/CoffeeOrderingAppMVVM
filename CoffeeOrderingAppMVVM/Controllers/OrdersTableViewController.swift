@@ -17,11 +17,10 @@ class OrdersTableViewController: UITableViewController {
     
     private func populateOrders(){
         
-        guard let coffeeOrdersURL = URL(string: "") else {
+        guard let coffeeOrdersURL = URL(string: "https://687df9c2c07d1a878c30b206.mockapi.io/orders") else {
             fatalError("URL is incorrect")
-            
         }
-        
+
         let resource = Resource<[Order]>(url: coffeeOrdersURL)
         WebService().load(resource: resource) {result in
         
